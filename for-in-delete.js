@@ -32,6 +32,28 @@
 // }
 
 
+//Reference from Ben about for in loops:
+
+// const person = {
+//   name: 'Bob',
+//   age: 24,
+//   hairColor: 'purple'
+// }
+
+// function showValues(obj){
+//   for(let key in obj){
+//     console.log(obj[key])
+//   }
+// }
+
+// function showValues2(obj){
+//   console.log(obj["name"])
+//   console.log(obj['age'])
+//   console.log(obj['hairColor'])
+// }
+
+// showValues(person)
+
 
 ////////// PROBLEM 1 //////////
 
@@ -39,10 +61,30 @@
   Inside the function showValues, write a for in loop that concatenates each of the property values and returns the concatenated string.
 */
 
-function showValues( obj ) {
-  //Code Here
-}
+// function showValues( obj ) {
+//   const concatString = ""
+//   for(let key in obj) {
+//     concatString += obj[key]
+//     console.log(obj[key])
+//   }
+//   return 
+// }
 
+var values = {
+  one: 'These',
+  two: ' are',
+  three: ' the',
+  four: ' property',
+  five: ' values.'
+} 
+
+function showValues(values) {
+  let concatString = ""
+  for(let key in values) {
+    concatString += values[key];
+  }
+  return concatString;
+}
 
 
 ////////// PROBLEM 2 //////////
@@ -55,6 +97,17 @@ function showValues( obj ) {
 
 //Code Here
 
+function greaterThan10(obj) {
+  let newObj = {}
+  for(let key in obj) {
+    if(obj[key] > 10) {
+      newObj[key] = 0;
+    } else {
+      newObj[key] = obj[key];
+      }
+  }
+  return newObj
+}
 
 
 ////////// PROBLEM 3 //////////
@@ -66,7 +119,13 @@ function showValues( obj ) {
 */
 
 //Code Here
-
+function double(obj) {
+  let objtimestwo = {}
+  for(let key in obj) {
+    objtimestwo[key] = obj[key] * 2;
+  }
+  return objtimestwo
+}
 
 
 ////////// PROBLEM 4 //////////
@@ -80,7 +139,15 @@ function showValues( obj ) {
 */
 
 //Code Here
-
+function secrets(obj) {
+  let newString = "";
+  for(let key in obj) {
+    if(obj.key[0] === "s" && obj.key[1] === "h") {
+      newString += obj.key[0], obj.key[2];
+    }
+  }
+  return newString;
+}
 
 
 /* 
