@@ -147,9 +147,9 @@ const monstersInYourPocket = [{"monster":"Bulbabunny","CP":156},{"monster":"Bulb
 
 // let myStrongest = monstersInYourPocket.filter(cb(e) => e[i] > )
 
-let myStrongest = monstersInYourPocket.filter(function(element, index, array) {
-  return element[i].CP > 200;
-});
+let myStrongest = monstersInYourPocket.filter(element => element.CP > 200);
+
+//Notes from myself: It's much easier than you think. This goes through each element in the array (each object in the array of objects), and checks to see if the value of property CP is greater than 200. The "if" is implied in the filter function. I'm still a little hazy on arrow functions, but the above does work.
 
 
 ////////// PROBLEM 5 //////////
@@ -165,9 +165,27 @@ const orders = [{"price":15,"tax":0.09},{"price":42,"tax":0.07},{"price":56,"tax
   Use a higher order method to get all the order totals after adding in the sales tax (given to you as a tax rate, hint: you'll need to do some multiplication). Your answer should be an array of numbers, one total for each order.
 */
 
-let orderTotals // Code here
+// let orderTotals // Code here
+
+// let orderTotals = orders.map(cb(acc, curr) {
+//   return acc.price * (acc.tax += 1)
+// }
+
+// let orderTotals = orders.map(cb(el) {
+//   return el.price * (el.tax + 1);
+// // })
+// let orderTotals = orders.map(function(e){
+//   return e.price + (e.price * e.tax);
+// });
+
+let orderTotals = orders.map(function(e){
+  return e.price * (e.tax +1);
+});
 
 
+
+// let orderTotals = orders.map(function(total){
+//   return total.price + (total.price * total.tax);})
 
 ////////// PROBLEM 6 //////////
 
