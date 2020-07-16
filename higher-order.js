@@ -23,18 +23,35 @@ const mixedNumbers = [6,3,1,7,5,2,6,8,9,4,2,7,9,3,1,8,4,3];
 //Code Here
 // function evenFinder()
 
+// Regular function notation (anonymous function)
+// var magic = function() {
+//   return new Date();
+// }
 
-let evenNumbers = mixedNumbers.filter(cb(element, index, array) {
-  return element % 2 === 0;
+// So, to turn something into an arrow function, version one is to take the word function out, and put the arrow symbol after the parentheses.
+
+// var magic = () => {
+  //return new Date();
+//}
+
+
+//Version two--the simpler, cleaner way--is to take out the curly braces and "return" because return is implied. 
+var magic = () => new Date();
+
+
+let evenNumbers = mixedNumbers.filter(function(element, index, array) {
+  if (element % 2 === 0) {
+    return element;
+  }
 });
 
-function evenFinder (array) {
-  let evenNumbers = mixedNumbers.filter(cb(element, index, wholeArray) {
-    return element %2 === 0;
-  })
-  return evenNumbers
-}
-let evenNumbers = mixedNumbers.filter((element, index, wholeArray) => {
+// function evenFinder (array) {
+//   let evenNumbers = mixedNumbers.filter(cb(element, index, wholeArray) {
+//     return element %2 === 0;
+//   })
+//   return evenNumbers
+// }
+// let evenNumbers = mixedNumbers.filter((element, index, wholeArray) => {
   
 //     }
 //   }
@@ -67,9 +84,11 @@ const prices = [15.00, 23.00, 78.00, 34.00, 12.00, 86.00, 12.00, 79.00, 32.00];
 */
 
 //Code Here
-let postTaxPrices // = prices.map(/* Provide Your Callback Here );
+// let postTaxPrices // = prices.map(/* Provide Your Callback Here );
 
+let postTaxPrices = prices.map(element => element * 1.07);
 
+console.log(postTaxPrices)
 
 ////////// PROBLEM 3 //////////
 
@@ -86,7 +105,19 @@ const populations = [8175133, 3792621, 2695598, 2100263];
 */
 
 //Code Here
-let totalPopulation //  = populations.reduce(/* Provide Your Callback Here */)
+// let totalPopulation //  = populations.reduce(/* Provide Your Callback Here */)
+
+// let totalPopulation = populations.reduce(cb(acc, curr, i, arr) {
+//   return acc + curr;
+// }); 
+
+let totalPopulation = populations.reduce ((acc, curr) => {
+  return acc + curr;
+});
+
+
+
+// console.log(totalPopulation);
 
 
 
@@ -112,8 +143,13 @@ const monstersInYourPocket = [{"monster":"Bulbabunny","CP":156},{"monster":"Bulb
 */
 
 //Code Here
-let myStrongest // = monstersInYourPocket.filter(/* Provide Your Callback Here */)
+// let myStrongest // = monstersInYourPocket.filter(/* Provide Your Callback Here */)
 
+// let myStrongest = monstersInYourPocket.filter(cb(e) => e[i] > )
+
+let myStrongest = monstersInYourPocket.filter(function(element, index, array) {
+  return element[i].CP > 200;
+});
 
 
 ////////// PROBLEM 5 //////////
