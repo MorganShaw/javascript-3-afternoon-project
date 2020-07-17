@@ -145,7 +145,7 @@ const monstersInYourPocket = [{"monster":"Bulbabunny","CP":156},{"monster":"Bulb
 //Code Here
 // let myStrongest // = monstersInYourPocket.filter(/* Provide Your Callback Here */)
 
-// let myStrongest = monstersInYourPocket.filter(cb(e) => e[i] > )
+// let myStrongest = monstersInYourPocket.filter((e) => e[i] > )
 
 let myStrongest = monstersInYourPocket.filter(element => element.CP > 200);
 
@@ -178,9 +178,20 @@ const orders = [{"price":15,"tax":0.09},{"price":42,"tax":0.07},{"price":56,"tax
 //   return e.price + (e.price * e.tax);
 // });
 
+// The answer I ended up with that worked: 
 let orderTotals = orders.map(function(e){
   return e.price * (e.tax +1);
 });
+
+// // From Rob in a review that didn't pass all tests:
+// let orderTotals = orders.map((e) => {
+//   total = e.price * (e.tax +1);
+//   return {
+//     price: e.price,
+//     tax: e.tax,
+//     total: e.total
+//   }
+// });
 
 
 
